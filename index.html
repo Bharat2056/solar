@@ -3,708 +3,768 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J.B.N Surya Urja Pvt Ltd. | Solar Solutions in Nepal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>J.B.N Surya Urja Pvt. Ltd. | Sustainable Solar Infrastructure Nepal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brandBlue: '#1d4ed8',
+                        brandDark: '#070e19',
+                        brandAmber: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Custom Styles & Animations */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 2s ease-in-out, transform 10s ease-out;
-            background-size: cover;
-            background-position: center;
-            transform: scale(1.05);
-        }
-        .hero-slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-        .bg-overlay {
-            background: linear-gradient(135deg, rgba(29, 78, 216, 0.85) 0%, rgba(15, 23, 42, 0.8) 100%);
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .blinking-cursor {
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        
-        /* Custom Scrollbars */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f8fafc;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1d4ed8; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #1e3a8a; 
-        }
-
-        /* Hide scrollbar for the mobile carousel & top bar */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        #site-nav { transition: background-color 0.4s ease, height 0.4s ease, border-color 0.4s ease; }
+        .dropdown-panel { transform-origin: top; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease; }
+        .hero-slide { transition: opacity 2s ease-in-out, transform 8s ease-out; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="text-slate-800 antialiased bg-slate-50 selection:bg-blue-700 selection:text-white">
+<body class="font-sans bg-white text-slate-800 antialiased overflow-x-hidden">
 
-    <div class="bg-blue-900 text-white text-[10px] sm:text-xs py-2 px-4 border-b border-blue-950 overflow-hidden">
-        <div class="max-w-7xl mx-auto flex items-center justify-between overflow-x-auto hide-scrollbar whitespace-nowrap gap-6 sm:gap-0">
-            <span class="flex items-center gap-2 flex-shrink-0">
-                <i class="fa-solid fa-certificate text-amber-400"></i>
-                ISO 9001:2015 Certified | Leading Solar Providers in Nepal
+    <div class="bg-brandDark text-white text-[11px] sm:text-xs py-2.5 px-6 border-b border-white/5 overflow-hidden">
+        <div class="max-w-[1340px] mx-auto flex items-center justify-between overflow-x-auto hide-scrollbar whitespace-nowrap gap-6 sm:gap-0">
+            <span class="flex items-center gap-2 font-medium text-slate-300">
+                <i class="fa-solid fa-certificate text-brandAmber"></i>
+                ISO 9001:2015 Certified | Leading Solar Infrastructure Providers in Nepal
             </span>
-            <div class="flex space-x-4 sm:space-x-6 flex-shrink-0 ml-auto">
-                <a href="tel:+97714444444" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-phone text-[10px]"></i> +977 1-4444444</a>
-                <a href="mailto:info@sunshine.com.np" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-[10px]"></i> info@sunshine.com.np</a>
+            <div class="flex space-x-6 font-medium ml-auto">
+                <a href="tel:+97714444444" class="hover:text-brandAmber transition-colors flex items-center gap-1.5"><i class="fa-solid fa-phone text-[10px]"></i> +977 1-4444444</a>
+                <a href="mailto:info@sunshine.com.np" class="hover:text-brandAmber transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-[10px]"></i> info@sunshine.com.np</a>
             </div>
         </div>
     </div>
 
-    <header class="sticky top-0 w-full z-50 bg-white shadow-md transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20 sm:h-24">
-                <div class="flex-shrink-0 flex items-center gap-2 sm:gap-3 cursor-pointer group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white text-amber-500 rounded-full flex items-center justify-center transition-all duration-300 border-2 border-amber-500 shadow-sm">
-                        <i class="fa-solid fa-sun text-2xl sm:text-3xl"></i>
+    <nav id="site-nav" class="fixed top-[37px] left-0 w-full h-[110px] z-50 flex items-center bg-transparent border-b border-white/10">
+        <div class="w-full max-w-[1340px] mx-auto px-6 md:px-10 flex justify-between items-center">
+            
+            <a href="#" class="flex items-center gap-3 no-underline group">
+                <div class="w-10 h-10 bg-white/10 backdrop-blur text-brandAmber rounded-full flex items-center justify-center border border-white/20 shadow-sm transition-colors duration-300 logo-circle-bg">
+                    <i class="fa-solid fa-sun text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white transition-colors duration-300 logo-text-main">J.B.N Surya Urja</span>
+                    <span class="text-[9px] font-bold text-brandAmber uppercase tracking-widest mt-0.5">Pvt. Ltd.</span>
+                </div>
+            </a>
+
+            <ul class="hidden lg:flex items-center gap-8 list-none font-semibold text-[14px]">
+                <li><a href="#hero" class="text-white/90 hover:text-brandAmber transition-colors nav-item-link">Home</a></li>
+                <li><a href="#about" class="text-white/90 hover:text-brandAmber transition-colors nav-item-link">About Us</a></li>
+                
+                <li class="relative nav-dropdown-trigger flex items-center h-full cursor-pointer py-4">
+                    <span class="text-white/90 flex items-center gap-1.5 hover:text-brandAmber transition-colors nav-item-link">
+                        Products & Services <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 14" class="w-2.5 h-auto fill-none stroke-white stroke-[2.5] transition-transform duration-300 chevron-vector"><path d="M1 1l11 11L23 1"/></svg>
+                    </span>
+                    <div class="dropdown-panel absolute top-[100%] left-1/2 -translate-x-1/2 w-[540px] bg-white text-slate-800 p-8 shadow-2xl rounded-sm opacity-0 pointer-events-none scale-95 border-t-2 border-brandBlue">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-[11px] text-slate-400 font-bold tracking-wider uppercase mb-2">Operational Grid</p>
+                                <p class="text-[0.85rem] text-slate-500 leading-relaxed">High-efficiency systems engineered specifically for residential, municipal, and commercial fields across Nepal.</p>
+                            </div>
+                            <div class="flex flex-col gap-2.5 border-l border-slate-100 pl-6 text-[0.9rem] font-medium text-slate-700">
+                                <a href="#products" class="hover:text-brandBlue transition-colors">Solar Water Heaters</a>
+                                <a href="#products" class="hover:text-brandBlue transition-colors">Solar PV Systems</a>
+                                <a href="#products" class="hover:text-brandBlue transition-colors">Solar Street Lights</a>
+                                <a href="#products" class="hover:text-brandBlue transition-colors">Commercial Heat Pumps</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex flex-col">
-    <!-- Main tracking pop -->
-    <span class="font-black text-xl sm:text-2xl tracking-tight text-blue-800 leading-none">J.B.N Surya Urja</span>
-    <!-- Legal identifier neatly balanced underneath -->
-    <span class="text-[10px] sm:text-[11px] font-bold text-amber-500 uppercase tracking-widest mt-1">Pvt. Ltd.</span>
-</div>
-                </div>
+                </li>
 
-                <nav class="hidden lg:flex space-x-8 font-bold text-[15px] text-slate-700">
-                    <a href="#home" class="hover:text-blue-700 transition-colors py-2 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#about" class="hover:text-blue-700 transition-colors py-2 relative group">About Us<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#products" class="hover:text-blue-700 transition-colors py-2 relative group">Products & Services<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#team" class="hover:text-blue-700 transition-colors py-2 relative group">Our Team<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span></a>
-                    <a href="#contact" class="hover:text-blue-700 transition-colors py-2 relative group">Contact Us<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span></a>
-                </nav>
+                <li><a href="#team" class="text-white/90 hover:text-brandAmber transition-colors nav-item-link">Our Team</a></li>
+                <li><a href="#contact" class="text-white/90 hover:text-brandAmber transition-colors nav-item-link">Contact Us</a></li>
+            </ul>
 
-                <div class="hidden md:flex items-center gap-4">
-                    
-                    <a href="#cta" class="bg-amber-500 hover:bg-amber-600 text-blue-950 px-7 py-3 rounded-md font-bold text-sm transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-amber-500/30">
-                        Get a Quote <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-blue-900 focus:outline-none transition-colors">
-                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-2xl">
-            <div class="px-4 pt-4 pb-8 space-y-2">
-                <a href="#home" class="block px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700 font-bold rounded-xl">Home</a>
-                <a href="#about" class="block px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700 font-bold rounded-xl">About Us</a>
-                <a href="#products" class="block px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700 font-bold rounded-xl">Products & Services</a>
-                <a href="#projects" class="block px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700 font-bold rounded-xl">Projects</a>
-                <a href="#team" class="block px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700 font-bold rounded-xl">Our Team</a>
-                <a href="#contact" class="block px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700 font-bold rounded-xl">Contact Us</a>
-                <a href="#" download class="block text-center mt-4 border-2 border-blue-800 text-blue-800 px-6 py-3 rounded-md font-bold">
-                    <i class="fa-solid fa-file-pdf"></i> Download Catalog
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="bg-brandAmber hover:bg-amber-600 text-slate-900 px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-brandAmber/20">
+                    Get a Quote
                 </a>
-                <a href="#cta" class="block text-center mt-2 bg-amber-500 text-blue-950 px-6 py-3.5 rounded-md font-bold">Get a Quote</a>
             </div>
-        </div>
-    </header>
 
-    <a href="https://wa.me/9779800000000" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-2xl sm:text-3xl shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:scale-110 transition-transform z-40 animate-bounce" style="animation-duration: 3s;">
+            <button class="flex lg:hidden flex-col gap-1.5 cursor-pointer z-50" id="drawer-toggle">
+                <span class="w-6 h-[2px] bg-white block transition-all line-bar"></span>
+                <span class="w-6 h-[2px] bg-white block transition-all line-bar"></span>
+                <span class="w-6 h-[2px] bg-white block transition-all line-bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-drawer" class="fixed inset-0 bg-brandDark text-white translate-x-full z-40 flex flex-col justify-center px-10 gap-6 transition-transform duration-500">
+        <a href="#hero" class="text-2xl font-bold hover:text-brandAmber transition-colors mobile-link">Home</a>
+        <a href="#about" class="text-2xl font-bold hover:text-brandAmber transition-colors mobile-link">About Us</a>
+        <a href="#products" class="text-2xl font-bold hover:text-brandAmber transition-colors mobile-link">Products & Services</a>
+        <a href="#team" class="text-2xl font-bold hover:text-brandAmber transition-colors mobile-link">Our Team</a>
+        <a href="#contact" class="text-2xl font-bold hover:text-brandAmber transition-colors mobile-link">Contact Us</a>
+        <div class="pt-6 border-t border-white/10 mt-4 flex flex-col gap-4">
+            <a href="tel:+97714444444" class="text-sm text-slate-400"><i class="fa-solid fa-phone mr-2"></i> +977 1-4444444</a>
+            <a href="#contact" class="bg-brandAmber text-center text-slate-950 py-3.5 rounded font-bold text-sm uppercase tracking-wider">Request Free Quote</a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/9779800000000" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_16px_0_rgba(37,211,102,0.4)] hover:scale-110 transition-transform z-40 animate-bounce" style="animation-duration: 3s;">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <section id="home" class="relative h-[85vh] sm:h-[85vh] min-h-[500px] flex items-center overflow-hidden bg-slate-900">
-        <div id="hero-bg-1" class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1509391366360-51546497e5ad?q=80&w=2070&auto=format&fit=crop');"></div>
-        <div id="hero-bg-2" class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=2070&auto=format&fit=crop');"></div>
-        <div id="hero-bg-3" class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2070&auto=format&fit=crop');"></div>
+    <section id="hero" class="relative w-full h-screen flex items-center bg-brandDark overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brandDark/90 via-brandDark/60 to-transparent z-10"></div>
         
-        <div class="absolute inset-0 bg-overlay z-10"></div>
-
-        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="max-w-3xl mx-auto sm:mx-0 text-center sm:text-left flex flex-col items-center sm:items-start drop-shadow-lg">
-                
-                <div class="inline-flex items-center justify-center gap-2 py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-200 font-bold tracking-widest text-[10px] sm:text-[11px] uppercase mb-5 border border-blue-500/30">
-                    <i class="fa-solid fa-sun text-amber-400"></i> Empowering Nepal
+        <div class="hero-slide absolute inset-0 opacity-0 active scale-105 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1509391366360-51546497e5ad?q=80&w=2070&auto=format&fit=crop');"></div>
+        <div class="hero-slide absolute inset-0 opacity-0 scale-105 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=2070&auto=format&fit=crop');"></div>
+        <div class="hero-slide absolute inset-0 opacity-0 scale-105 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="relative w-full max-w-[1340px] mx-auto px-6 md:px-10 z-20 mt-16">
+            <div class="max-w-[850px] flex flex-col items-start text-left">
+                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-brandBlue/20 text-blue-300 font-bold tracking-widest text-[11px] uppercase mb-6 border border-blue-500/30">
+                    <i class="fa-solid fa-sun text-brandAmber"></i> Empowering Nepal's Grid
                 </div>
-                
-                <div class="min-h-[100px] sm:min-h-[140px] md:min-h-[160px] mb-4 sm:mb-6 flex justify-center sm:justify-start w-full">
-                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white leading-tight tracking-tight">
-                        <span id="typewriter-text" class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-blue-100"></span><span class="blinking-cursor text-amber-500 font-light">|</span>
-                    </h1>
-                </div>
-
-                <p class="text-sm sm:text-lg text-slate-200 mb-8 max-w-xl font-medium leading-relaxed drop-shadow-md">
-                    Premium Solar Water Heaters, PV Systems, and backup solutions for homes and businesses across Nepal.
+                <h1 class="text-4xl md:text-5xl lg:text-[4.5rem] font-black text-white leading-[1.1] tracking-tight mb-6">
+                    <span id="typewriter-text" class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-200"></span><span class="blinking-cursor text-brandAmber font-light">|</span>
+                </h1>
+                <p class="text-base md:text-xl text-slate-300 mb-10 max-w-2xl font-medium leading-relaxed">
+                    Premium Solar Water Heaters, PV Systems, and clean backups engineered sustainably for homes and enterprises across Nepal.
                 </p>
-                
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-                    <a href="#products" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-blue-950 px-8 py-4 rounded-md font-bold text-sm sm:text-base text-center transition-all duration-300 flex justify-center items-center gap-2 shadow-lg">
-                        Explore Products <i class="fa-solid fa-arrow-right"></i>
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="#products" class="bg-brandAmber hover:bg-amber-600 text-slate-900 px-8 py-4 rounded-sm font-bold text-sm tracking-wide text-center transition-all duration-300 shadow-lg flex justify-center items-center gap-2">
+                        Explore Solutions <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="#" download class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-md font-bold text-sm sm:text-base text-center transition-all duration-300 flex justify-center items-center gap-2">
+                    <a href="#" download class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-sm font-bold text-sm tracking-wide text-center transition-all duration-300 flex justify-center items-center gap-2">
                         <i class="fa-solid fa-file-pdf"></i> Download Catalog
                     </a>
                 </div>
             </div>
         </div>
+        
+        <a href="#about" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-auto stroke-white fill-none stroke-2" viewBox="0 0 25 14"><path d="M1 1l11 11L23 1"/></svg>
+        </a>
     </section>
 
-    <section class="bg-blue-900 py-6 sm:py-8 relative z-30 border-b-4 border-amber-500 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:flex md:flex-wrap justify-between md:justify-center items-center gap-y-6 md:gap-8 lg:gap-16 text-blue-100">
-                <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-2 sm:gap-3 font-bold text-[13px] sm:text-lg">
-                    <i class="fa-solid fa-award text-amber-400 text-2xl"></i> ISO Certified
+    <!-- SECTION 1: CLEAN MANIFESTO STATEMENT (Edify Style Center Text) -->
+    <section id="about" class="w-full px-6 md:px-10 py-24 md:py-36 bg-white border-b border-slate-50">
+        <div class="max-w-[760px] mx-auto text-center flex flex-col items-center">
+            <p class="text-sm text-brandBlue font-bold uppercase tracking-widest mb-6">Welcome to J.B.N Surya Urja</p>
+            <div class="space-y-6 text-slate-600 text-lg md:text-[1.32rem] font-normal leading-relaxed tracking-wide">
+                <p class="font-medium text-slate-900">
+                    Founded in 2022 and registered in Tarkeshwar, Kathmandu, Nepal, we are a renewable energy company dedicated to solar power generation. We specialize in developing efficient, reliable, and scalable energy solutions that support Nepal’s transition toward sustainable power.
+                </p>
+                <p class="text-slate-500 text-base md:text-[1.05rem]">
+                    With a steadily expanding project portfolio, we are strengthening our operations and contributing to the nation’s evolving energy landscape. Our facilities reduce structural dependencies on traditional power networks while providing clean, highly efficient assets for regional communities.
+                </p>
+            </div>
+            <a href="#products" class="mt-10 inline-block px-8 py-3 border-2 border-brandBlue text-brandBlue text-[0.95rem] font-semibold rounded-full hover:bg-brandBlue hover:text-white transition-all duration-300">
+                Our Portfolio in Action
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: THE OPERATIONAL FOOTPRINT (Edify Style Full Width Grid) -->
+    <section class="w-full bg-brandBlue text-white px-6 md:px-10 py-24 md:py-32">
+        <div class="max-w-[1340px] mx-auto">
+            <h2 class="text-3xl md:text-[2.8rem] font-bold text-center mb-20 tracking-tight">Our operational footprint</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 text-center gap-y-12 md:gap-y-0">
+                <div class="px-6 py-8 md:border-r border-white/20 flex flex-col items-center">
+                    <div class="text-5xl md:text-[4.5rem] font-bold tracking-tighter mb-2 leading-none">1<span class="text-3xl md:text-4xl font-medium ml-1">GW</span></div>
+                    <p class="text-[1.05rem] opacity-90 max-w-[260px] leading-snug">generated via renewable and energy storage projects</p>
                 </div>
-                <div class="hidden md:block w-px h-8 bg-blue-700"></div>
-                <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-2 sm:gap-3 font-bold text-[13px] sm:text-lg">
-                    <i class="fa-solid fa-check-double text-amber-400 text-2xl"></i> Premium Quality
+                <div class="px-6 py-8 md:border-r border-white/20 flex flex-col items-center">
+                    <div class="text-5xl md:text-[4.5rem] font-bold tracking-tighter mb-2 leading-none"><span class="text-3xl md:text-4xl font-medium mr-1">$</span>1.9<span class="text-3xl md:text-4xl font-medium ml-1">b</span></div>
+                    <p class="text-[1.05rem] opacity-90 max-w-[260px] leading-snug">invested in clean energy generation and infrastructure</p>
                 </div>
-                <div class="hidden md:block w-px h-8 bg-blue-700"></div>
-                <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-2 sm:gap-3 font-bold text-[13px] sm:text-lg">
-                    <i class="fa-solid fa-users text-amber-400 text-2xl"></i> Nationwide
+                <div class="px-6 py-8 flex flex-col items-center">
+                    <div class="text-5xl md:text-[4.5rem] font-bold tracking-tighter mb-2 leading-none">753,386</div>
+                    <p class="text-[1.05rem] opacity-90 max-w-[260px] leading-snug">tonnes of CO² emissions saved</p>
                 </div>
-                <div class="hidden md:block w-px h-8 bg-blue-700"></div>
-                <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-2 sm:gap-3 font-bold text-[13px] sm:text-lg">
-                    <i class="fa-solid fa-headset text-amber-400 text-2xl"></i> 24/7 Support
+                
+                <div class="col-span-1 md:col-span-3 border-t border-white/20 my-10 hidden md:block"></div>
+                
+                <div class="px-6 py-8 md:border-r border-white/20 flex flex-col items-center">
+                    <div class="text-5xl md:text-[4.5rem] font-bold tracking-tighter mb-2 leading-none">50<span class="text-3xl md:text-4xl font-medium ml-1">km²</span></div>
+                    <p class="text-[1.05rem] opacity-90 max-w-[260px] leading-snug">of land covered with over 2.6 million solar modules</p>
+                </div>
+                <div class="px-6 py-8 md:border-r border-white/20 flex flex-col items-center">
+                    <div class="text-5xl md:text-[4.5rem] font-bold tracking-tighter mb-2 leading-none">281,000</div>
+                    <p class="text-[1.05rem] opacity-90 max-w-[260px] leading-snug">Australian homes powered by Edify</p>
+                </div>
+                <div class="px-6 py-8 flex flex-col items-center">
+                    <div class="text-5xl md:text-[4.5rem] font-bold tracking-tighter mb-2 leading-none">2,200+</div>
+                    <p class="text-[1.05rem] opacity-90 max-w-[260px] leading-snug">local jobs created during construction</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#products" class="inline-block px-10 py-3.5 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-brandBlue transition-colors">
+                    See the results
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: CORE STRIP HIGHLIGHTS BAR -->
+    <section class="bg-brandBlue text-white border-b-4 border-brandAmber relative z-30">
+        <div class="max-w-[1340px] mx-auto px-6 md:px-10 py-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center gap-3 font-bold text-sm md:text-base lg:text-lg">
+                    <i class="fa-solid fa-award text-brandAmber text-2xl"></i> ISO Certified
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-3 font-bold text-sm md:text-base lg:text-lg">
+                    <i class="fa-solid fa-check-double text-brandAmber text-2xl"></i> Premium Quality
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-3 font-bold text-sm md:text-base lg:text-lg">
+                    <i class="fa-solid fa-users text-brandAmber text-2xl"></i> Nationwide Supply
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-3 font-bold text-sm md:text-base lg:text-lg">
+                    <i class="fa-solid fa-headset text-brandAmber text-2xl"></i> 24/7 Service Support
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 sm:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
-                        <div class="h-1 w-8 sm:w-12 bg-amber-500 rounded"></div>
-                        <span class="text-blue-700 font-bold uppercase tracking-widest text-[11px] sm:text-sm">Welcome to J.B.N Surya Urja</span>
+    <!-- SECTION 4: DETAILED PROFILE WITH IMAGES (Asymmetric Grid) -->
+    <section class="w-full px-6 md:px-10 py-24 md:py-36 bg-white border-b border-slate-50">
+        <div class="max-w-[1340px] mx-auto">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="h-[2px] w-12 bg-brandAmber rounded"></div>
+                        <span class="text-brandBlue font-bold uppercase tracking-widest text-xs md:text-sm">Corporate Core Overview</span>
                     </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                        Pioneering Renewable Energy Solutions in Nepal.
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+                        Powering Homes and Industry Aligned with National Priorities.
                     </h2>
-                    
-                    <div class="space-y-4 sm:space-y-6 text-slate-600 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
+                    <div class="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
                         <p>
-                            Founded in 2022 and registered in Tarkeshwar, Kathmandu, Nepal, we are a renewable energy company dedicated to solar power generation. We specialize in developing efficient, reliable, and scalable energy solutions that support Nepal’s transition toward sustainable power.
-                        </p>
-                        <p>
-                            With a steadily expanding project portfolio, we are strengthening our operations and contributing to the nation’s evolving energy landscape.
+                            We specialize in customizing grid integration architectures that scale reliably. From local households looking for independent water systems to large businesses trying to protect operational networks from grid volatility, our targets are durability and long-term yield efficiency.
                         </p>
                     </div>
 
-                    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 hover:shadow-md transition-shadow">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mb-4 text-lg sm:text-xl">
+                    <div class="grid sm:grid-cols-2 gap-6 pt-6">
+                        <div class="bg-slate-50 p-6 rounded-sm border-t-2 border-brandBlue shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 bg-blue-50 text-brandBlue rounded-full flex items-center justify-center mb-4 text-base">
                                 <i class="fa-solid fa-eye"></i>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Our Vision</h3>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Our Vision</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
                                 To be a leading force in advancing renewable energy in Nepal through sustainable, reliable, and forward-looking solar power solutions.
                             </p>
                         </div>
-                        <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100 hover:shadow-md transition-shadow">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4 text-lg sm:text-xl">
+                        <div class="bg-slate-50 p-6 rounded-sm border-t-2 border-brandAmber shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-full flex items-center justify-center mb-4 text-base">
                                 <i class="fa-solid fa-bullseye"></i>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">Our Mission</h3>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Our Mission</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
                                 To develop and deliver sustainable solar energy solutions that ensure reliable power generation, expand clean energy infrastructure, and contribute to Nepal’s long-term energy security.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative order-1 lg:order-2 mb-8 lg:mb-0">
-                    <div class="grid grid-cols-2 gap-3 sm:gap-4 relative z-10">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1000&auto=format&fit=crop" alt="Solar Panels" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-lg mt-4 sm:mt-8">
-                        <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop" alt="Installation" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-lg">
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                    <div class="grid grid-cols-2 gap-4 relative z-10">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1000&auto=format&fit=crop" alt="Solar Panels" class="w-full h-56 sm:h-72 object-cover rounded shadow-md mt-6 sm:mt-12">
+                        <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop" alt="Installation" class="w-full h-56 sm:h-72 object-cover rounded shadow-md">
                     </div>
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-blue-950 w-24 h-24 sm:w-32 sm:h-32 rounded-full flex flex-col items-center justify-center shadow-2xl z-20 border-4 border-white">
-                        <span class="text-2xl sm:text-3xl font-black">100%</span>
-                        <span class="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-center px-2">Quality<br>Guaranteed</span>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brandAmber text-slate-950 w-28 h-28 rounded-full flex flex-col items-center justify-center shadow-2xl z-20 border-4 border-white text-center">
+                        <span class="text-xl sm:text-2xl font-black">100%</span>
+                        <span class="text-[9px] font-extrabold uppercase tracking-wider leading-none mt-1">Quality<br>Assured</span>
                     </div>
-                    <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-3/4 h-3/4 bg-blue-50 rounded-3xl z-0"></div>
+                    <div class="absolute -bottom-6 -right-6 w-3/4 h-3/4 bg-slate-50 rounded-lg z-0"></div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="products" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+    <section id="products" class="w-full px-6 md:px-10 py-24 md:py-36 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-[1340px] mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
                 <div class="flex items-center justify-center gap-3 mb-4">
-                    <div class="h-1 w-6 sm:w-8 bg-amber-500 rounded"></div>
-                    <h4 class="text-blue-700 font-bold uppercase tracking-widest text-xs sm:text-sm">Our Portfolio</h4>
-                    <div class="h-1 w-6 sm:w-8 bg-amber-500 rounded"></div>
+                    <div class="h-[2px] w-8 bg-brandAmber rounded"></div>
+                    <h4 class="text-brandBlue font-bold uppercase tracking-widest text-xs md:text-sm">Our Portfolio</h4>
+                    <div class="h-[2px] w-8 bg-brandAmber rounded"></div>
                 </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-4 sm:mb-6">Products & Services</h2>
-                <p class="text-base sm:text-lg text-slate-600">Explore our wide range of highly efficient, durable, and cost-effective renewable energy products tailored for the Nepalese market.</p>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">Products & Services</h2>
+                <p class="text-base md:text-lg text-slate-500">Explore our wide range of highly efficient, durable, and cost-effective renewable energy products tailored for the Nepalese market.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/images/hs.webp" alt="Solar Water Heater" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-amber-500 text-blue-950 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Top Seller</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 text-blue-700 text-xl group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-hot-tub-person"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="bg-white rounded border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-brandDark/10 group-hover:bg-transparent z-10 transition-colors"></div>
+                            <img src="https://images.unsplash.com/photo-1509391366360-51546497e5ad?q=80&w=800&auto=format&fit=crop" alt="Solar Water Heater" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-brandAmber text-slate-950 text-[9px] font-bold px-3 py-1 rounded uppercase tracking-wider z-20">Top Seller</div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Solar Water Heaters</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">High-efficiency Evacuated Tube Collector (ETC) and Flat Plate systems for 24/7 hot water in residential and commercial buildings.</p>
-                        <a href="#contact" class="text-blue-700 font-bold text-sm hover:text-amber-500 flex items-center gap-1">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
+                        <div class="p-6 space-y-3">
+                            <div class="w-11 h-11 bg-slate-50 rounded flex items-center justify-center text-brandBlue text-lg group-hover:bg-brandBlue group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-hot-tub-person"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-brandBlue transition-colors">Solar Water Heaters</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">High-efficiency Evacuated Tube Collector (ETC) and Flat Plate setups for residential structures.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="text-brandBlue font-bold text-xs sm:text-sm flex items-center gap-1 hover:text-brandAmber transition-colors">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/images/pv.webp" alt="Solar PV System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 text-blue-700 text-xl group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-solar-panel"></i>
+
+                <div class="bg-white rounded border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-brandDark/10 group-hover:bg-transparent z-10 transition-colors"></div>
+                            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=800&auto=format&fit=crop" alt="Solar PV System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Solar PV Systems</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Grid-tied, off-grid, and hybrid solar panel systems to eliminate load-shedding worries for homes and businesses.</p>
-                        <a href="#contact" class="text-blue-700 font-bold text-sm hover:text-amber-500 flex items-center gap-1">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
+                        <div class="p-6 space-y-3">
+                            <div class="w-11 h-11 bg-slate-50 rounded flex items-center justify-center text-brandBlue text-lg group-hover:bg-brandBlue group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-solar-panel"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-brandBlue transition-colors">Solar PV Systems</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Grid-tied, off-grid, and hybrid networks designed to eliminate load-shedding risks cleanly.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="text-brandBlue font-bold text-xs sm:text-sm flex items-center gap-1 hover:text-brandAmber transition-colors">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
-                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/images/street.webp" alt="Solar Street Light" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 text-blue-700 text-xl group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                            <i class="fa-regular fa-lightbulb"></i>
+
+                <div class="bg-white rounded border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-brandDark/10 group-hover:bg-transparent z-10 transition-colors"></div>
+                            <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=800&auto=format&fit=crop" alt="Solar Street Light" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Solar Street Lights</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">All-in-one integrated solar street lighting perfect for municipalities, pathways, and corporate campuses.</p>
-                        <a href="#contact" class="text-blue-700 font-bold text-sm hover:text-amber-500 flex items-center gap-1">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
+                        <div class="p-6 space-y-3">
+                            <div class="w-11 h-11 bg-slate-50 rounded flex items-center justify-center text-brandBlue text-lg group-hover:bg-brandBlue group-hover:text-white transition-colors">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-brandBlue transition-colors">Solar Street Lights</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">All-in-one smart lighting loops configured for municipalities and corporate corridors.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="text-brandBlue font-bold text-xs sm:text-sm flex items-center gap-1 hover:text-brandAmber transition-colors">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="/images/pump.webp" alt="Heat Pumps" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 text-blue-700 text-xl group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-temperature-arrow-up"></i>
+
+                <div class="bg-white rounded border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-brandDark/10 group-hover:bg-transparent z-10 transition-colors"></div>
+                            <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=800&auto=format&fit=crop" alt="Heat Pumps" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Heat Pumps</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Energy-efficient commercial heat pumps ideal for hotels, hospitals, and swimming pool heating solutions.</p>
-                        <a href="#contact" class="text-blue-700 font-bold text-sm hover:text-amber-500 flex items-center gap-1">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
+                        <div class="p-6 space-y-3">
+                            <div class="w-11 h-11 bg-slate-50 rounded flex items-center justify-center text-brandBlue text-lg group-hover:bg-brandBlue group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-temperature-arrow-up"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-brandBlue transition-colors">Heat Pumps</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">High-efficiency commercial systems structured for hospitality and medical centers.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="text-brandBlue font-bold text-xs sm:text-sm flex items-center gap-1 hover:text-brandAmber transition-colors">Inquire Now <i class="fa-solid fa-angle-right"></i></a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="team" class="py-16 sm:py-24 bg-white border-t border-slate-200 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+    <section id="team" class="w-full px-6 md:px-10 py-24 md:py-36 bg-white overflow-hidden">
+        <div class="max-w-[1340px] mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 sm:mb-24">
                 <div class="flex items-center justify-center gap-3 mb-4">
-                    <div class="h-1 w-6 sm:w-8 bg-amber-500 rounded"></div>
-                    <h4 class="text-blue-700 font-bold uppercase tracking-widest text-xs sm:text-sm">Leadership</h4>
-                    <div class="h-1 w-6 sm:w-8 bg-amber-500 rounded"></div>
+                    <div class="h-[2px] w-8 bg-brandAmber rounded"></div>
+                    <h4 class="text-brandBlue font-bold uppercase tracking-widest text-xs md:text-sm">Leadership Core</h4>
+                    <div class="h-[2px] w-8 bg-brandAmber rounded"></div>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Messages from Our Founders</h2>
-                <p class="text-base sm:text-lg text-slate-600">The driving force behind J.B.N Surya Urja’s vision for a sustainable Nepal.</p>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">Messages from Our Founders</h2>
+                <p class="text-base text-slate-500">The driving operational force behind J.B.N Surya Urja’s footprint in Nepal.</p>
             </div>
 
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none md:pb-0 w-full">
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-6 hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none md:pb-0 w-full">
                 
-                <div class="flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden text-center hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div class="h-60 sm:h-72 overflow-hidden bg-slate-200 relative group">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400">
-                            <i class="fa-solid fa-image text-3xl sm:text-4xl"></i>
+                <div class="flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center bg-slate-50 rounded border border-slate-100 overflow-hidden text-center hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-8 flex-grow flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full bg-slate-200 border-2 border-brandBlue/20 flex items-center justify-center mb-6 text-slate-400">
+                            <i class="fa-solid fa-user text-3xl"></i>
                         </div>
-                        <img src="" alt="Navaraj Ghimire" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 hidden">
-                    </div>
-                    <div class="p-6 sm:p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl sm:text-2xl font-black text-slate-900">Navaraj Ghimire</h3>
-                        <p class="text-blue-700 text-xs sm:text-sm font-bold uppercase tracking-wider mt-1 mb-4 sm:mb-6">CEO's Message</p>
-                        <div class="relative flex-grow">
-                            <i class="fa-solid fa-quote-left absolute -top-2 -left-1 text-2xl sm:text-3xl text-amber-100 z-0"></i>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic relative z-10 text-left sm:text-center px-4 sm:px-0">
-                                "We are driven by a clear vision—to harness solar energy in addressing Nepal’s energy challenges. Through disciplined execution and practical innovation, we aim to deliver reliable energy solutions that contribute to long-term sustainability and national development."
-                            </p>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Navaraj Ghimire</h3>
+                        <p class="text-brandBlue text-xs font-bold uppercase tracking-wider mt-1 mb-4">CEO's Message</p>
+                        <p class="text-slate-600 text-sm leading-relaxed italic text-center px-2">
+                            "We are driven by a clear vision—to harness solar energy in addressing Nepal’s energy challenges. Through disciplined execution and practical innovation, we aim to deliver reliable energy solutions that contribute to long-term sustainability."
+                        </p>
                     </div>
                 </div>
 
-                <div class="flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden text-center hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div class="h-60 sm:h-72 overflow-hidden bg-slate-200 relative group">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400">
-                            <i class="fa-solid fa-image text-3xl sm:text-4xl"></i>
+                <div class="flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center bg-slate-50 rounded border border-slate-100 overflow-hidden text-center hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-8 flex-grow flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full bg-slate-200 border-2 border-brandBlue/20 flex items-center justify-center mb-6 text-slate-400">
+                            <i class="fa-solid fa-user text-3xl"></i>
                         </div>
-                        <img src="" alt="Jagadish Ghimire" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 hidden">
-                    </div>
-                    <div class="p-6 sm:p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl sm:text-2xl font-black text-slate-900">Jagadish Ghimire</h3>
-                        <p class="text-blue-700 text-xs sm:text-sm font-bold uppercase tracking-wider mt-1 mb-4 sm:mb-6">Co-Founder's Message</p>
-                        <div class="relative flex-grow">
-                            <i class="fa-solid fa-quote-left absolute -top-2 -left-1 text-2xl sm:text-3xl text-amber-100 z-0"></i>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic relative z-10 text-left sm:text-center px-4 sm:px-0">
-                                "Our commitment lies in generating clean and dependable energy while enhancing the stability of Nepal’s power system. By aligning with national energy priorities, we strive to advance solar solutions that support a resilient and sustainable energy future."
-                            </p>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Jagadish Ghimire</h3>
+                        <p class="text-brandBlue text-xs font-bold uppercase tracking-wider mt-1 mb-4">Co-Founder's Message</p>
+                        <p class="text-slate-600 text-sm leading-relaxed italic text-center px-2">
+                            "Our commitment lies in generating clean and dependable energy while enhancing the stability of Nepal’s power system. By aligning with national priorities, we strive to advance solar architectures that support a resilient future."
+                        </p>
                     </div>
                 </div>
 
-                <div class="flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden text-center hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div class="h-60 sm:h-72 overflow-hidden bg-slate-200 relative group">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400">
-                            <i class="fa-solid fa-user-gear text-3xl sm:text-4xl"></i>
+                <div class="flex-shrink-0 w-[85%] sm:w-[60%] md:w-auto snap-center bg-slate-50 rounded border border-slate-100 overflow-hidden text-center hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-8 flex-grow flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full bg-slate-200 border-2 border-brandBlue/20 flex items-center justify-center mb-6 text-slate-400">
+                            <i class="fa-solid fa-user-gear text-3xl"></i>
                         </div>
-                        <img src="" alt="Santosh Gyawali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 hidden">
-                    </div>
-                    <div class="p-6 sm:p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl sm:text-2xl font-black text-slate-900">Santosh Gyawali</h3>
-                        <p class="text-blue-700 text-xs sm:text-sm font-bold uppercase tracking-wider mt-1 mb-4 sm:mb-6">Computer Engineer</p>
-                        <div class="relative flex-grow">
-                            <i class="fa-solid fa-quote-left absolute -top-2 -left-1 text-2xl sm:text-3xl text-amber-100 z-0"></i>
-                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic relative z-10 text-left sm:text-center px-4 sm:px-0">
-                                "Optimizing hardware-software integrations to maximize solar collection efficiency. Focused on developing smart power monitoring architectures and ensuring clean network connectivity for data grids across Nepal."
-                            </p>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Santosh Gyawali</h3>
+                        <p class="text-brandBlue text-xs font-bold uppercase tracking-wider mt-1 mb-4">Computer Engineer</p>
+                        <p class="text-slate-600 text-sm leading-relaxed italic text-center px-2">
+                            "Optimizing system structures to maximize solar grid collection efficiency. Focused on developing automated power monitoring configurations and ensuring safe connectivity metrics for data networks across Nepal."
+                        </p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="flex justify-center gap-2 mt-4 md:hidden">
-                <div class="w-2 h-2 rounded-full bg-amber-500"></div>
-                <div class="w-2 h-2 rounded-full bg-slate-300"></div>
-                <div class="w-2 h-2 rounded-full bg-slate-300"></div>
+
             </div>
         </div>
     </section>
 
-    <section id="cta" class="py-16 sm:py-24 relative bg-slate-50">
-        <div id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden flex flex-col md:flex-row border border-slate-100">
+    <section id="contact" class="w-full bg-slate-50 px-6 md:px-10 py-24 md:py-36 border-t border-slate-200">
+        <div class="max-w-[1340px] mx-auto">
+            <div class="bg-white rounded border border-slate-100 overflow-hidden flex flex-col lg:flex-row shadow-xl">
                 
-                <div class="md:w-5/12 bg-blue-900 text-white p-8 sm:p-14 flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 opacity-10 text-[200px] sm:text-[250px]">
+                <div class="lg:w-5/12 bg-brandDark text-white p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-12 -bottom-12 opacity-[0.03] text-[260px] pointer-events-none">
                         <i class="fa-solid fa-sun"></i>
                     </div>
-                    <div class="relative z-10">
-                        <h3 class="text-2xl sm:text-3xl font-black mb-4 sm:mb-6">Get in Touch</h3>
-                        <p class="text-blue-100 text-sm sm:text-base mb-8 sm:mb-10 leading-relaxed">
-                            Have questions about our products or need a quotation? Reach out to our team today.
-                        </p>
+                    <div class="relative z-10 space-y-10">
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-4">Get in Touch</h3>
+                            <p class="text-slate-400 text-sm md:text-base leading-relaxed">Have questions about our grid setups or need a tailored layout quote? Reach out directly.</p>
+                        </div>
                         
-                        <div class="space-y-6 sm:space-y-8">
+                        <div class="space-y-6 text-sm sm:text-base font-medium">
                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-amber-400 flex-shrink-0 mt-1">
-                                    <i class="fa-solid fa-location-dot"></i>
+                                <div class="w-9 h-9 bg-white/5 border border-white/10 text-brandAmber rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-location-dot text-xs"></i>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-base sm:text-lg mb-1">Head Office</p>
-                                    <p class="text-blue-100 text-sm sm:text-base">Kuleshwor, Kathmandu, Nepal</p>
-                                </div>
-                            </div>
-                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-amber-400 flex-shrink-0 mt-1">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-base sm:text-lg mb-1">Phone</p>
-                                    <p class="text-blue-100 text-sm sm:text-base">+977 1-4444444<br>+977 9800000000</p>
+                                    <p class="font-bold text-slate-200">Head Office</p>
+                                    <p class="text-slate-400 font-normal">Kuleshwor, Kathmandu, Nepal</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-amber-400 flex-shrink-0 mt-1">
-                                    <i class="fa-solid fa-envelope"></i>
+                                <div class="w-9 h-9 bg-white/5 border border-white/10 text-brandAmber rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-phone text-xs"></i>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-base sm:text-lg mb-1">Email</p>
-                                    <p class="text-blue-100 text-sm sm:text-base">info@sunshine.com.np</p>
+                                    <p class="font-bold text-slate-200">Phone Details</p>
+                                    <p class="text-slate-400 font-normal">+977 1-4444444<br>+977 9800000000</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 bg-white/5 border border-white/10 text-brandAmber rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-envelope text-xs"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-200">Email Pipeline</p>
+                                    <p class="text-slate-400 font-normal">info@sunshine.com.np</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="md:w-7/12 p-8 sm:p-14 bg-white">
-                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">Request a Quote</h3>
-                    
-                    <form class="space-y-4 sm:space-y-5" onsubmit="event.preventDefault(); alert('Inquiry submitted! Our team will contact you shortly.');">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                <div class="lg:w-7/12 p-8 md:p-14 bg-white">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4 tracking-tight">Request a Premium Quote</h3>
+                    <form class="space-y-5" onsubmit="event.preventDefault(); alert('Inquiry submitted successfully! Our structural team will call you shortly.');">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-md focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:ring-2 focus:ring-brandBlue focus:border-brandBlue outline-none transition-all text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">Phone Number *</label>
-                                <input type="tel" required class="w-full px-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-md focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Phone Number *</label>
+                                <input type="tel" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:ring-2 focus:ring-brandBlue focus:border-brandBlue outline-none transition-all text-sm">
                             </div>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">Email Address</label>
-                                <input type="email" class="w-full px-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-md focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:ring-2 focus:ring-brandBlue focus:border-brandBlue outline-none transition-all text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">Product of Interest</label>
-                                <select class="w-full px-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-md focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all appearance-none text-sm sm:text-base">
-                                    <option>Solar Water Heater</option>
-                                    <option>Solar PV System</option>
-                                    <option>Solar Street Light</option>
-                                    <option>Heat Pumps</option>
-                                    <option>Other Services</option>
-                                </select>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Portfolio Segment</label>
+                                <div class="relative">
+                                    <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:ring-2 focus:ring-brandBlue focus:border-brandBlue outline-none transition-all appearance-none text-sm text-slate-700 font-medium">
+                                        <option>Solar Water Heater</option>
+                                        <option>Solar PV System</option>
+                                        <option>Solar Street Light</option>
+                                        <option>Commercial Heat Pumps</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l0.707 0.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">Message / Requirements</label>
-                            <textarea rows="4" class="w-full px-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-md focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"></textarea>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">System Requirements Description</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:bg-white focus:ring-2 focus:ring-brandBlue focus:border-brandBlue outline-none transition-all text-sm"></textarea>
                         </div>
-                        <button type="submit" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 sm:py-3.5 px-8 rounded-md transition-colors duration-300 shadow-md mt-2">
-                            Submit Inquiry
+                        <button type="submit" class="w-full sm:w-auto bg-brandAmber hover:bg-amber-600 text-slate-900 font-bold py-3.5 px-8 rounded text-xs uppercase tracking-wider transition-colors duration-300 shadow-md">
+                            Submit Inquiry Form
                         </button>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t-4 border-blue-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-6 w-fit">
-                        <div class="w-10 h-10 bg-white text-amber-500 rounded-full flex items-center justify-center border-2 border-amber-500">
-                            <i class="fa-solid fa-sun text-xl"></i>
+    <footer class="bg-brandDark text-slate-400 pt-20 pb-10 border-t-2 border-brandBlue">
+        <div class="max-w-[1340px] mx-auto px-6 md:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 w-fit">
+                        <div class="w-9 h-9 bg-white/10 text-brandAmber rounded-full flex items-center justify-center border border-white/10">
+                            <i class="fa-solid fa-sun text-base"></i>
                         </div>
                         <div class="flex flex-col">
-    <span class="font-black text-xl tracking-tight text-white leading-none">J.B.N Surya Urja</span>
-    <span class="text-[10px] font-bold text-amber-500 uppercase tracking-widest mt-1">Pvt. Ltd.</span>
-</div>
+                            <span class="font-extrabold text-white tracking-tight leading-none text-base">J.B.N Surya Urja</span>
+                            <span class="text-[9px] font-bold text-brandAmber uppercase tracking-widest mt-0.5">Pvt. Ltd.</span>
+                        </div>
                     </div>
-                    <p class="text-sm leading-relaxed mb-6">Your trusted partner for sustainable, efficient, and cost-effective solar energy solutions across Nepal.</p>
-                    
-                    <div class="flex gap-3">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 text-white transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 text-white transition-all"><i class="fa-brands fa-twitter text-sm"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 text-white transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    <p class="text-xs leading-relaxed text-slate-500">Your trusted system partner for high-resilience solar infrastructure platforms across Nepal.</p>
+                    <div class="flex gap-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brandBlue hover:text-white text-slate-400 transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brandBlue hover:text-white text-slate-400 transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-6 text-lg border-b border-slate-700 pb-2 inline-block">Quick Links</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#home" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> Home</a></li>
-                        <li><a href="#about" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> About Us</a></li>
-                        <li><a href="#projects" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> Portfolio</a></li>
-                        <li><a href="#contact" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> Contact Us</a></li>
+                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Navigation Menu</h4>
+                    <ul class="space-y-2 text-xs font-medium">
+                        <li><a href="#hero" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> Corporate Home</a></li>
+                        <li><a href="#about" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> About Enterprise</a></li>
+                        <li><a href="#products" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> Asset Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> Contact Channels</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-6 text-lg border-b border-slate-700 pb-2 inline-block">Our Products</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#products" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> Solar PV Systems</a></li>
-                        <li><a href="#products" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> Solar Water Heaters</a></li>
-                        <li><a href="#products" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> Solar Street Lights</a></li>
-                        <li><a href="#products" class="hover:text-amber-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-caret-right text-blue-500"></i> Heat Pumps</a></li>
+                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Product Categories</h4>
+                    <ul class="space-y-2 text-xs font-medium">
+                        <li><a href="#products" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> Commercial PV Systems</a></li>
+                        <li><a href="#products" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> Vacuum Solar Heaters</a></li>
+                        <li><a href="#products" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> Municipal Street Lights</a></li>
+                        <li><a href="#products" class="hover:text-brandAmber transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-brandBlue"></i> Integrated Heat Pumps</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-bold mb-6 text-lg border-b border-slate-700 pb-2 inline-block">Newsletter</h4>
-                    <p class="text-sm mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
-                    <form class="flex flex-col gap-2" onsubmit="event.preventDefault(); alert('Subscribed!');">
-                        <input type="email" placeholder="Your Email Address" class="bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-md outline-none focus:border-blue-500 w-full text-sm">
-                        <button class="bg-blue-700 hover:bg-blue-600 text-white font-bold px-4 py-3 rounded-md transition-colors text-sm w-full">Subscribe</button>
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Corporate Bulletin</h4>
+                    <p class="text-xs text-slate-500">Subscribe for regional market updates and clean tech solar benchmarks.</p>
+                    <form class="flex flex-col gap-2 pt-1" onsubmit="event.preventDefault(); alert('Email logged.');">
+                        <input type="email" placeholder="Email Address" class="bg-white/5 border border-white/10 text-white px-4 py-2.5 rounded-sm outline-none focus:border-brandBlue text-xs w-full">
+                        <button class="bg-brandBlue hover:bg-blue-600 text-white font-semibold px-4 py-2.5 rounded-sm text-xs transition-colors w-full uppercase tracking-wider">Subscribe</button>
                     </form>
                 </div>
             </div>
             
-            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                <p>&copy; 2026 J.B.N Surya Urja Pvt Ltd. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+                <p>&copy; 2026 J.B.N Surya Urja Pvt. Ltd. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Charter</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Operational Terms</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <div id="welcome-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden px-4">
-        <div id="modal-backdrop" class="absolute inset-0 bg-blue-950/70 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
-        
-        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl max-w-md w-full relative z-10 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden border border-slate-100">
-            <button id="close-modal-btn" class="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 flex items-center justify-center bg-white/20 hover:bg-white/40 text-white backdrop-blur-md rounded-full transition-colors z-20">
-                <i class="fa-solid fa-xmark"></i>
+        <div id="modal-backdrop" class="absolute inset-0 bg-brandDark/80 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+        <div id="modal-content" class="bg-white rounded shadow-2xl max-w-md w-full relative z-10 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden border border-slate-100">
+            
+            <button id="close-modal-btn" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/20 hover:bg-black/40 text-white backdrop-blur rounded-full transition-colors z-20">
+                <i class="fa-solid fa-xmark text-sm"></i>
             </button>
 
-            <div class="h-28 sm:h-32 bg-blue-900 relative overflow-hidden">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509391366360-51546497e5ad?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+            <div class="h-32 bg-brandDark relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509391366360-51546497e5ad?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white text-amber-500 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
-                        <i class="fa-solid fa-sun text-2xl sm:text-3xl"></i>
+                    <div class="w-14 h-14 bg-white/10 text-brandAmber rounded-full flex items-center justify-center border border-white/20 shadow-lg">
+                        <i class="fa-solid fa-sun text-xl"></i>
                     </div>
                 </div>
             </div>
 
-            <div class="p-6 sm:p-8 text-center">
-                <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-2">Welcome to J.B.N Surya Urja</h3>
-                <p class="text-slate-600 text-xs sm:text-sm mb-6 leading-relaxed">
-                    Empowering Nepal with sustainable and reliable solar solutions. Get a free consultation for your home or business today!
+            <div class="p-8 text-center space-y-4">
+                <h3 class="text-xl font-bold text-slate-900 tracking-tight">Welcome to J.B.N Surya Urja</h3>
+                <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Empowering Nepal with sustainable and reliable solar solutions. Get a free systemic analysis consultation for your home or business today!
                 </p>
-                <a href="#contact" id="modal-cta-btn" class="inline-block bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-colors duration-300 shadow-md w-full text-sm sm:text-base">
-                    Get a Free Quote
+                <a href="#contact" id="modal-cta-btn" class="inline-block bg-brandAmber hover:bg-amber-600 text-slate-950 font-bold py-3.5 px-8 rounded text-xs uppercase tracking-wider transition-colors duration-300 shadow-md w-full">
+                    Request a Free Quote
                 </a>
             </div>
         </div>
     </div>
 
     <script>
-        // --- 1. Hero Background Slider ---
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. Background Slider Cycle ---
+            const slides = document.querySelectorAll('.hero-slide');
+            let slideIndex = 0;
+            setInterval(() => {
+                slides[slideIndex].classList.remove('active', 'opacity-100');
+                slides[slideIndex].classList.add('opacity-0');
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.remove('opacity-0');
+                slides[slideIndex].classList.add('active', 'opacity-100');
+            }, 6000);
 
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        setInterval(nextSlide, 6000);
+            // --- 2. Typewriter Output Logic ---
+            const typographicQuotes = [
+                "Welcome to J.B.N Surya Urja.",
+                "Efficient Solar Water Heaters.",
+                "Power your business with clean energy."
+            ];
+            let listIndex = 0; let characterIndex = 0; let outputDeleting = false;
+            const textElement = document.getElementById('typewriter-text');
 
-        // --- 2. Typewriter Effect ---
-        const quotes = [
-            "Welcome to J.B.N Surya Urja.",
-            "Efficient Solar Water Heaters.",
-            "Power your business with clean energy."
-        ];
-        let quoteIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 60;
-        const deletingSpeed = 30;
-        const delayBetweenQuotes = 2500;
-        const typewriterElement = document.getElementById('typewriter-text');
+            function performTypewrite() {
+                const quoteStr = typographicQuotes[listIndex];
+                if (outputDeleting) {
+                    textElement.textContent = quoteStr.substring(0, characterIndex - 1);
+                    characterIndex--;
+                } else {
+                    textElement.textContent = quoteStr.substring(0, characterIndex + 1);
+                    characterIndex++;
+                }
 
-        function typeWriter() {
-            const currentQuote = quotes[quoteIndex];
-            if (isDeleting) {
-                typewriterElement.textContent = currentQuote.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterElement.textContent = currentQuote.substring(0, charIndex + 1);
-                charIndex++;
+                let executionSpeed = outputDeleting ? 30 : 60;
+                if (!outputDeleting && characterIndex === quoteStr.length) {
+                    executionSpeed = 2200; outputDeleting = true;
+                } else if (outputDeleting && characterIndex === 0) {
+                    outputDeleting = false; listIndex = (listIndex + 1) % typographicQuotes.length;
+                    executionSpeed = 400;
+                }
+                setTimeout(performTypewrite, executionSpeed);
             }
-            let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
-            if (!isDeleting && charIndex === currentQuote.length) {
-                typeSpeed = delayBetweenQuotes;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                quoteIndex = (quoteIndex + 1) % quotes.length;
-                typeSpeed = 500; 
-            }
-            setTimeout(typeWriter, typeSpeed);
-        }
-        window.onload = function() {
-            setTimeout(typeWriter, 1000);
-        };
+            setTimeout(performTypewrite, 800);
 
-        // --- 3. Mobile Menu Toggle ---
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = btn.querySelector('i');
+            // --- 3. Sticky Header Toggle On Scroll Offset ---
+            const siteNav = document.getElementById('site-nav');
+            const logoText = document.querySelector('.logo-text-main');
+            const logoCircle = document.querySelector('.logo-circle-bg');
+            const menuLinks = document.querySelectorAll('.nav-item-link');
+            const lineBars = document.querySelectorAll('.line-bar');
+            const chevronVecs = document.querySelectorAll('.chevron-vector');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            if(menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars-staggered');
-            } else {
-                icon.classList.remove('fa-bars-staggered');
-                icon.classList.add('fa-xmark');
-            }
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars-staggered');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    siteNav.classList.add('bg-white', 'h-[85px]', 'shadow-md', 'border-slate-100', 'top-0');
+                    siteNav.classList.remove('bg-transparent', 'h-[110px]', 'border-white/10', 'top-[37px]');
+                    if(logoText) logoText.classList.replace('text-white', 'text-slate-900');
+                    if(logoCircle) logoCircle.classList.replace('bg-white/10', 'bg-slate-50');
+                    if(logoCircle) logoCircle.classList.replace('border-white/20', 'border-slate-100');
+                    menuLinks.forEach(link => link.classList.replace('text-white/90', 'text-slate-700'));
+                    lineBars.forEach(b => b.classList.replace('bg-white', 'bg-slate-900'));
+                    chevronVecs.forEach(c => c.classList.replace('stroke-white', 'stroke-slate-700'));
+                } else {
+                    siteNav.classList.add('bg-transparent', 'h-[110px]', 'border-white/10', 'top-[37px]');
+                    siteNav.classList.remove('bg-white', 'h-[85px]', 'shadow-md', 'border-slate-100', 'top-0');
+                    if(logoText) logoText.classList.replace('text-slate-900', 'text-white');
+                    if(logoCircle) logoCircle.classList.replace('bg-slate-50', 'bg-white/10');
+                    if(logoCircle) logoCircle.classList.replace('border-slate-100', 'border-white/20');
+                    menuLinks.forEach(link => link.classList.replace('text-slate-700', 'text-white/90'));
+                    lineBars.forEach(b => b.classList.replace('bg-slate-900', 'bg-white'));
+                    chevronVecs.forEach(c => c.classList.replace('stroke-slate-700', 'stroke-white'));
+                }
             });
-        });
 
-        // --- 4. Navbar Scroll Effect ---
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
+            // --- 4. Mobile Drawer Panel Matrix Control ---
+            const drawerToggle = document.getElementById('drawer-toggle');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const internalMobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleDrawerAction() {
+                mobileDrawer.classList.toggle('translate-x-full');
+                if (!mobileDrawer.classList.contains('translate-x-full')) {
+                    lineBars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    lineBars[1].style.opacity = '0';
+                    lineBars[2].style.transform = 'rotate(-44deg) translate(5px, -6px)';
+                    lineBars.forEach(b => b.classList.replace('bg-slate-900', 'bg-white'));
+                } else {
+                    lineBars[0].style.transform = 'none';
+                    lineBars[1].style.opacity = '1';
+                    lineBars[2].style.transform = 'none';
+                    if(window.scrollY > 40) lineBars.forEach(b => b.classList.replace('bg-white', 'bg-slate-900'));
+                }
             }
-        });
+            drawerToggle.addEventListener('click', toggleDrawerAction);
+            internalMobileLinks.forEach(link => link.addEventListener('click', toggleDrawerAction));
 
-        // --- 5. Welcome Popup Modal ---
-        window.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('welcome-modal');
-            const backdrop = document.getElementById('modal-backdrop');
-            const content = document.getElementById('modal-content');
-            const closeBtn = document.getElementById('close-modal-btn');
-            const ctaBtn = document.getElementById('modal-cta-btn');
+            // --- 5. Navigation Menu Dropdown Panels ---
+            const triggers = document.querySelectorAll('.nav-dropdown-trigger');
+            triggers.forEach(trig => {
+                trig.addEventListener('mouseenter', () => {
+                    const panel = trig.querySelector('.dropdown-panel');
+                    const chev = trig.querySelector('.chevron-vector');
+                    if(panel) panel.classList.remove('opacity-0', 'pointer-events-none', 'scale-95'), panel.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+                    if(chev) chev.style.transform = 'rotate(180deg)';
+                });
+                trig.addEventListener('mouseleave', () => {
+                    const panel = trig.querySelector('.dropdown-panel');
+                    const chev = trig.querySelector('.chevron-vector');
+                    if(panel) panel.classList.add('opacity-0', 'pointer-events-none', 'scale-95'), panel.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                    if(chev) chev.style.transform = 'none';
+                });
+            });
 
-            const openModal = () => {
-                modal.classList.remove('hidden');
+            // --- 6. Modal Popups ---
+            const modalElement = document.getElementById('welcome-modal');
+            const backdropElement = document.getElementById('modal-backdrop');
+            const contentElement = document.getElementById('modal-content');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalCtaBtn = document.getElementById('modal-cta-btn');
+
+            const shutModal = () => {
+                backdropElement.classList.replace('opacity-100', 'opacity-0');
+                contentElement.classList.replace('opacity-100', 'opacity-0');
+                contentElement.classList.add('scale-95');
+                setTimeout(() => modalElement.classList.add('hidden'), 300);
+            };
+
+            setTimeout(() => {
+                modalElement.classList.remove('hidden');
                 setTimeout(() => {
-                    backdrop.classList.remove('opacity-0');
-                    backdrop.classList.add('opacity-100');
-                    content.classList.remove('opacity-0', 'scale-95');
-                    content.classList.add('opacity-100', 'scale-100');
+                    backdropElement.classList.replace('opacity-0', 'opacity-100');
+                    contentElement.classList.replace('opacity-0', 'opacity-100');
+                    contentElement.remove('scale-95');
                 }, 50);
-            };
+            }, 1500);
 
-            const closeModal = () => {
-                backdrop.classList.remove('opacity-100');
-                backdrop.classList.add('opacity-0');
-                content.classList.remove('opacity-100', 'scale-100');
-                content.classList.add('opacity-0', 'scale-95');
-                
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                }, 300);
-            };
-
-            setTimeout(openModal, 1500);
-
-            closeBtn.addEventListener('click', closeModal);
-            backdrop.addEventListener('click', closeModal);
-            ctaBtn.addEventListener('click', closeModal);
+            closeModalBtn.addEventListener('click', shutModal);
+            backdropElement.addEventListener('click', shutModal);
+            modalCtaBtn.addEventListener('click', shutModal);
         });
     </script>
 </body>
